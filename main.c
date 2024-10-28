@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 void le_matriz(int matriz[9][9]) {
-    printf("Digite os 81 números da matriz (linha por linha e com espaços entre os números):\n");
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
             scanf("%d", &matriz[i][j]);
@@ -62,7 +61,6 @@ int confere_matrizes_menores(int matriz[9][9]) {
 int main() {
     int n, matriz[9][9];
 
-    printf("Digite o número de matrizes de sudoku para a conferência: \n");
     scanf("%d", &n);
 
     for (int i = 0; i < n; i++) {
@@ -71,7 +69,7 @@ int main() {
         int matriz_maior = confere_matriz_maior(matriz);
         int matriz_menor = confere_matrizes_menores(matriz);
 
-        printf("Instância %d\n", i + 1);
+        printf("Instancia %d\n", i + 1);
         if (matriz_maior && matriz_menor) {
             printf("SIM\n");
         } else {
