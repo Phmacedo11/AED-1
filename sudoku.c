@@ -10,8 +10,8 @@ void le_matriz(int matriz[9][9]) {
 
 int confere_matriz_maior(int matriz[9][9]) {
     for (int i = 0; i < 9; i++) {
-        int linha[10] = {0};  
-        int coluna[10] = {0}; 
+        int linha[10];  
+        int coluna[10]; 
 
         for (int j = 0; j < 9; j++) {
             int valor_linha = matriz[i][j];
@@ -40,7 +40,7 @@ int confere_matriz_maior(int matriz[9][9]) {
 int confere_matrizes_menores(int matriz[9][9]) {
     for (int i = 0; i < 9; i += 3) {
         for (int j = 0; j < 9; j += 3) {
-            int submatriz[10] = {0};  
+            int submatriz[10];  
 
             for (int k = i; k < i + 3; k++) {
                 for (int l = j; l < j + 3; l++){
