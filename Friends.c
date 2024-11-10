@@ -143,5 +143,6 @@ int main(){
         free(temp);
     }
 
+    printf("\n");
     return 0;
 }
