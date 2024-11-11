@@ -7,7 +7,7 @@ typedef struct nod {
     struct nod *seg;
 }node;
 
-void recieve_list(char **list) {
+void receive_list(char **list) {
     *list = (char*)malloc(50 * sizeof(char));  
 
     fgets(*list, 50, stdin);
@@ -121,9 +121,9 @@ int main(){
     char *current_list = NULL, *new_list = NULL, *join_name = NULL;
     node *current_node, *new_node, *final_node;
 
-    recieve_list(&current_list);
-    recieve_list(&new_list);
-    recieve_list(&join_name);
+    receive_list(&current_list);
+    receive_list(&new_list);
+    receive_list(&join_name);
 
     current_node = fill_nodes(current_list);
     new_node = fill_nodes(new_list);
