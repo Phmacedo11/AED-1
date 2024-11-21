@@ -29,35 +29,26 @@ int BemFormada(char s[]) {
 
 int main() {
 
-    char *s;
-    int n, *res;
-    
-    scanf("%d", &n);
-    getchar();
-    
-    res = (int*)malloc(n*sizeof(int));
-    
-    for(int i=0; i<n; i++){    
-        s = (char*)malloc(1000*sizeof(char));
+    char s[1001];
+    int *res = NULL, count=0;
+
+    while (fgets(s, sizeof(s), stdin) != NULL) {
         
-        fgets(s, 1000, stdin);
-        
-        res[i] = BemFormada(s);
-        
-        free(s);
-        
+        res = (int*)realloc(res, (count + 1)*sizeof(int));
+
+        s[strcspn(s, "\n")] = '\0';
+
+        res[count++] = BemFormada(s);
     }
-    
-    for(int j=0; j<n; j++){
-        if(res[j] == 1)
-        printf("correct\n");
-        else
-        printf("incorrect\n");
+
+    for (int i = 0; i < count; i++) {
+        if (res[i] == 1) {
+            printf("correct\n");
+        } else {
+            printf("incorrect\n");
+        }
     }
-    
     free(res);
-    printf("\n");
     return 0;
 }
-
 
